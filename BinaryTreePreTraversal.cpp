@@ -20,3 +20,30 @@ public:
         return vec;
     }
 };
+
+/* non-recursive implementation
+class Solution {
+public:
+    vector<int> preorderTraversal(TreeNode *root) {
+    // solve using stack
+    vector<int> vec;
+    stack<TreeNode *> s;
+    if (root==NULL) return vec;
+    //vec.push_back(root->val);
+    TreeNode *ptr = root;
+    while( ptr!=NULL || !s.empty() )
+    {
+        if (ptr==NULL) 
+        {
+            ptr = s.top();
+            s.pop();
+        }
+        vec.push_back(ptr->val);
+        if (ptr->right!=NULL) s.push(ptr->right);
+        ptr = ptr->left;
+    }
+    return vec;
+    
+    }
+};
+*/
