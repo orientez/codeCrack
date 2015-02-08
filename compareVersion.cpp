@@ -14,17 +14,20 @@ int compareVersion(string version1, string version2) {
     int n2 = version2.find('.');
     int s1 = version1.size();
     int s2 = version2.size();
-    if (n1==-1) n1=s1;
-    if (n2==-1) n2=s2;
+    
+    string p1, p2;
+    if (n1==-1) n1=s1; else p1= version1.substr(n1+1,s1-n1);
+    if (n2==-1) n2=s2; else p2= version2.substr(n2+1,s2-n2);
     
     if (n1>n2) return 1;
     else if (n1<n2) return -1;
     else
     {
-    	//std::cout << n1 << "\n";
+    	
         int result = version1.substr(0, n1).compare(version2.substr(0, n2));
+        
         if (result==0 && s1>n1)
-            return version1.substr(n1, s1-1).compare(version2.substr(n2, s2-1));
+            return p1.compare(p2);
         else
             return result;
     }
