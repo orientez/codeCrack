@@ -15,23 +15,43 @@ int compareVersion(string version1, string version2) {
     int s1 = version1.size();
     int s2 = version2.size();
     
-    string p1, p2;
-    if (n1==-1) n1=s1; else p1= version1.substr(n1+1,s1-n1);
-    if (n2==-1) n2=s2; else p2= version2.substr(n2+1,s2-n2);
-    //std::cout << p1 << " " << p2 << "\n";
+    string b1, b2, p1, p2;
+    b1= version1.substr(0,n1);
+    if (n1==-1) n1=s1; 
+    else 
+    {
+    	
+    	p1= version1.substr(n1+1,s1-n1);
+    }
+    b2= version2.substr(0,n2);
+    
+    if (n2==-1) n2=s2; 
+    else 
+    {
+    	p2= version2.substr(n2+1,s2-n2);
+    }//std::cout << p1 << " " << p2 << "\n";
     if (n1>n2) return 1;
     else if (n1<n2) return -1;
     else
     {
-    	int p1l = p1.size();
-    	int p2l = p2.size();
-		if (p1l > p2l) return 1;
-		else if (p1l < p2l) return -1;
-		else 
-		{
-			bool result = p1.compare(p2);
-			return static_cast<int>(result);
+    	//std::cout << b1 << " " << b2 << "\n";
+    	if (b1.compare(b2) > 0) return 1;
+    	else if (b1.compare(b2) < 0) return -1;
+    	else
+    	{
+    
+			int p1l = p1.size();
+			int p2l = p2.size();
+			if (p1l > p2l) return 1;
+			else if (p1l < p2l) return -1;
+			else 
+			{
+				//std::cout << p1 << " " << p2 << "\n";
+				bool result = p1.compare(p2);
+				return static_cast<int>(result);
+			}
 		}
+			
     }
     
 }
