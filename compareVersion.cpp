@@ -1,3 +1,4 @@
+
 string trimZero(string s)
 {
     int i = 0;
@@ -23,13 +24,14 @@ int compareVersion(string version1, string version2) {
     else if (n1<n2) return -1;
     else
     {
-    	
-        int result = version1.substr(0, n1).compare(version2.substr(0, n2));
-        
+        int result = version1.substr(0, n1).compare(version2.substr(0, n2));   
         if (result==0 && s1>n1)
-            return p1.compare(p2);
-        else
-            return result;
+            result = p1.compare(p2);
+		
+		if (result > 0) return 1;
+		else if(result < 0) return -1;
+		else return 0;
+		
     }
     
 }
