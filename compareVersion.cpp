@@ -42,16 +42,17 @@ int compareVersion(string version1, string version2) {
     
 			int p1l = p1.size();
 			int p2l = p2.size();
+			
 			if (p1l > p2l) return 1;
 			else if (p1l < p2l) return -1;
 			else 
 			{
-				//std::cout << p1 << " " << p2 << "\n";
-				bool result = p1.compare(p2);
-				return static_cast<int>(result);
+				
+				int result = p1.compare(p2);
+				if (result > 0) return 1;
+				else if (result < 0) return -1;
+				else return 0;
 			}
 		}
-			
     }
-    
 }
