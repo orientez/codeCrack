@@ -33,8 +33,8 @@ public:
             mList = mList->next;
         }
         
-        if (l1) mList->next = l1; 
-        if (l2) mList->next = l2;
+        if (l1) mList = l1; 
+        if (l2) mList = l2;
         if (!mList) return NULL;
         
         return head.next->next;
