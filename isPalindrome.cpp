@@ -1,21 +1,14 @@
-bool isPalindrome(int x) {
-    if (x < 0) return false;
-    if (x < 10) return true;
-    int base = 1;
-    while (x/10 >= base) {
-        base = base * 10;
-    }
-    //base = base/10;
-    while (x > 0) {
-        if (x < 10) return true;
-        if (x/base==x%10)
-        {
-            x = x%base;
-            x = x/10;
-            base = base/100;
-        }
-        else
-            return false;
+bool isPalindrome(string s) {
+    int ss = s.size();
+    int left = 0;
+    int right = ss - 1;
+    while (left < right) {
+        while (!isalpha(s[left]) && left < right) left++;
+        while (!isalpha(s[right]) && left < right) right--;
+        if (left==right) return true;
         
+        if ( toupper(s[left]) == toupper(s[right]) ) {left++; right--;}
+        else return false;
     }
     return true;
+}
