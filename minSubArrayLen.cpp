@@ -1,3 +1,4 @@
+// [5,1,3 ,5,10,7,4,9,2,8]
 int minSubArrayLen(int s, vector<int>& nums) {
     int left = 0;
     int right = 0;
