@@ -25,7 +25,6 @@ public:
             head = cur;
             lPtr = lPtr->next;
         }
-        
         while (lPtr!=NULL and rPtr!=NULL)
         {
             if (rPtr->val < lPtr->val) 
@@ -40,7 +39,6 @@ public:
                 cur = cur->next;
                 lPtr = lPtr->next;
             }
-            
         }
         
         if (lPtr==NULL)
@@ -55,8 +53,6 @@ public:
         lPtr = head;
     }
 
-    
-    
     ListNode *sortList(ListNode *head) {
         if (head==NULL) return NULL;
         if (head->next==NULL) return head;

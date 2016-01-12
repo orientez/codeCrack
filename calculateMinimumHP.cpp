@@ -29,7 +29,6 @@
                 temp1 = av[j-1] - dungeon[i][j];
                 av[j] = min(temp, temp1);
                 mv[j] = min(max(temp, mv[j]), max(temp1, mv[j-1]) );
-                //mv[j] = max(min(mv[j], mv[j-1]), av[j]); 
             }
             
         }
