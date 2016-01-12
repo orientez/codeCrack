@@ -10,8 +10,6 @@ public:
             str[i] = str[s-i-1];
             str[s-i-1] = str[i];
         }
-        //return str;
-        
     }
     string addBinary(string a, string b) {
         bool inc = false;
