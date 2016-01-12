@@ -7,7 +7,6 @@ public:
             children[i] = nullptr;
         }
     }
-
     bool marker;
     TrieNode* children[26];
 };
@@ -17,7 +16,6 @@ public:
     Trie() {
         root = new TrieNode();
     }
-
     // Inserts a word into the trie.
     void insert(string s) {
         int ss = s.size();
