@@ -12,7 +12,6 @@ public:
             start++;
         }
         max = start;
-
         for (int i = start+1; i < n; i++)
         {
             
@@ -20,7 +19,6 @@ public:
             {
                 sum = sum + A[max] - A[i];
             }
-            
             else
             {
                 max = i;   
@@ -28,16 +26,11 @@ public:
             }
         }
         if (!once) sum = 0;
-        
         if (max < n - 1)
         {
-            
-            
             int k = n - 1;
             while (A[k] < A[k-1] && k > max) k--;
             end = k;
-            
-            
             for (int i = max+1; i < end; i++)
             {
                 if (A[i] < A[end]) sum = sum + A[end] - A[i];
